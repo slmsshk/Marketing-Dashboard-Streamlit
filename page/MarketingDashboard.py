@@ -3,8 +3,8 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 
-import json
-import requests
+# import json
+# import requests
 
 #Title
 st.markdown("<h1 style='text-align: center; color: White; font-size:50px; '>Marketing Dashboard</h1>", unsafe_allow_html=True)

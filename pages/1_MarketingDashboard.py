@@ -9,15 +9,35 @@ import UI
 st.set_page_config(page_title="Dashboard", page_icon="📈")
 UI.add_bg_from_local('pages\Background Image.png')
 
-# #Title
+# Title
 UI.write(tag='h1',value="Marketing Dashboard",color='white',fontsize=35)
 
-#Subtitle
+# Subtitle
 UI.write(value='This dashboard will help you get more information about the Marketing datasets and their output',tag='h2',textalign='left',fontsize=25,color='#ff033e')
+# ==================================================================
+
+# Loading Data
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df=pd.read_json('pages\data.json')
+
+col1,col2=st.columns(2)
+
+with col1:
+    first_rows=col1.number_input(' ',step=1)
+    col1.markdown(f"""<p style='color:white;text-align:'center';'>Enter Preview num</'p'>""",unsafe_allow_html=True)
+    col1.write(df.head(first_rows))
+
+with col2:
+    last_rows=col2.number_input(' ',step=1,key=2)
+    col2.markdown(f"""<p style='color:white;text-align:'center';'>Enter Preview num</'p'>""",unsafe_allow_html=True)
+    col2.write(df.tail(last_rows))
+
+# ===================================================================
 
 
-
-        
 # #Separating orderbook and trade columns
 # df=pd.read_json('pages\data.json')
 # st.write(df.head())

@@ -18,8 +18,8 @@ def add_bg_from_local(image_file):
 
 def write(
     value,tag='p',color='red',fontsize=10,fontweight='normal',
-    textalign='center'
-    ):
+    textalign='center',padding='35px',bg='white' ):
+
     """
     Parameters
     value=Value to be printed
@@ -28,8 +28,11 @@ def write(
     fontsize: font size to use default 10px
     fontweight: (def-normal)(accepted(normal,bold,italic))
     textalign: alignment accepted values(center,left,right)
+    padding(str): add padding in px
+    bg(background color): Add background color
     """
-    st.markdown(f"""<{tag} style='color:{color};font-size:{str(fontsize)+'px'};font-weight:{fontweight};text-align:{textalign};'>
+    
+    st.markdown(f"""<{tag} style='color:{color};font-size:{str(fontsize)+'px'};font-weight:{fontweight};text-align:{textalign};padding:{padding};background-color:{bg}'>
     {value}    </{tag}>""",unsafe_allow_html=True)
 
 
